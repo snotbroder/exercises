@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gæt et tal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+    <section>
+        <main>
+            <h1>Kan du gætte tallet?</h1>
+            <form id="guess" action="">
+                <label for="input"></label>
+                <input placeholder="Gæt et tal fra 0-100" id="input" type="number" name="quantity" min="0" max="100">
+                <button onclick="knapKlik()" type="button" id="guessButton">Gæt!</button>
+            </form>
+        </main>
+        <article class="sidebar">
+            <h1>Tallet er: <span id="text">...</span></h1>
+            <h3 id="result"></h3>
+            <button onClick="window.location.reload();">Reset</button>
+        </article>
+    </section>
+</body>
+
+
+
+<script src="index.js"></script>
+
+</html>

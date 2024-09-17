@@ -1,0 +1,62 @@
+.animation {
+  animation: animation 1s linear infinite;
+}
+.error {
+  animation: error 0.4s both 3;
+}
+
+@keyframes animation {
+  0% {
+    color: aqua;
+    background-color: hotpink;
+  }
+  50% {
+    color: hotpink;
+    background-color: aqua;
+  }
+
+  100% {
+    color: aqua;
+    background-color: hotpink;
+  }
+}
+@keyframes error {
+  0% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+
+input {
+  width: 50%;
+}
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+
+  main {
+    background-color: rgb(197, 197, 197);
+    padding: 2rem;
+  }
+
+  article {
+    background-color: rgb(232, 232, 232);
+    padding: 2rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
