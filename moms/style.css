@@ -1,0 +1,71 @@
+:root {
+  --shadow: 1px 6px 5px 0px rgba(71, 71, 71, 0.16);
+}
+
+body {
+  display: block;
+  h6 {
+    margin: 0;
+    color: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+  }
+  background: #f3f3f3;
+  input,
+  button {
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 30px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  label {
+    color: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  height: 20%;
+  gap: 0.5rem;
+
+  > * {
+    border-radius: 5px;
+  }
+  > :first-child {
+    background: #661387;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+  }
+  > .results {
+    background: #e2e2e2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: var(--shadow);
+    > h6 {
+      color: #000;
+    }
+    > :last-child {
+      width: 100%;
+      border-top: solid 2px #aaaaaa;
+      padding-top: 1rem;
+    }
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
+}

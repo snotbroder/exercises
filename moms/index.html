@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moms beregner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Momsberegner</h1>
+    <div class="wrapper">
+
+        <form action="">
+            <div class="inputs">
+                <label for="input">Beløb:</label>
+                <input type="text" name="" value="1" id="beloeb">
+                <label for="moms">Moms %:</label>
+                <input type="text" name="" value="25" id="moms">
+            </div>
+            <button onclick="beregn()" type="button">Beregn!</button>
+
+        </form>
+        <div class="results">
+            <h6>Subtotal: <span id="subtotal">1</span> DKK</h6>
+            <h6>Heraf moms: <span id="momssats">0.25</span> DKK</h6>
+
+            <h6>Total: <span id="resultat">1.25</span> DKK</h6>
+
+        </div>
+    </div>
+</body>
+<script src="moms.js"></script>
+
+</html>
