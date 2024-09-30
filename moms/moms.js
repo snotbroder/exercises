@@ -1,4 +1,4 @@
-"use strict";
+// import { $$, $ } from "../utils/dom.js";
 let input = document.querySelector("#beloeb");
 let moms = document.querySelector("#moms");
 let result;
