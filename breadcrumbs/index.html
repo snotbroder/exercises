@@ -34,14 +34,16 @@
 
     li {
         display: inline;
-        margin-right: 5px;
+        padding-left: .5rem;
     }
 
+    /* Her tilføjer jeg en skråstreg efter hvert elelemnt*/
     li::after {
         content: "/";
-        margin-left: 5px;
+        margin-left: 0.5rem;
     }
 
+    /* men tilføj ikke på det sidste barn */
     li:last-child::after {
         content: "";
     }
