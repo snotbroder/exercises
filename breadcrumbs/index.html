@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumbs</title>
+</head>
+
+<body>
+    <main>
+        <h1>Breadcrumbs</h1>
+        <nav id="breadcrumb-container">
+
+        </nav>
+        <button id="generate-breadcrumb">Generate breadcrumb</button>
+    </main>
+</body>
+<script src="/breadcrumbs/script.js"></script>
+
+</html>
+
+<style>
+    main {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        display: inline;
+        margin-right: 5px;
+    }
+
+    li::after {
+        content: "/";
+        margin-left: 5px;
+    }
+
+    li:last-child::after {
+        content: "";
+    }
+</style>
