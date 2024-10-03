@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Switcher</title>
     <script type="module" src="js.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header">Båden</header>
-    <p>Content</p>
+    <header> <span class="header">Båden</span>
+        <label>
+            Vælg sprog:
+            <select class="sprog" name="sprog">
+                <!-- <option value="">Sprog</option> -->
+                <option value="Dansk">DA</option>
+                <option value="Tysk">DE</option>
+            </select>
+        </label>
+    </header>
+    <main>
+        <h3>Content</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nisi earum quos totam, numquam tenetur ducimus
+            animi fugit voluptas facilis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga atque perspiciatis quaerat animi.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi molestias officiis repudiandae corrupti a
+            possimus quaerat enim culpa impedit, architecto at asperiores vitae. Cum, facilis recusandae.</p>
+    </main>
     <div class="footer">Robotten</div>
 
-    <label>
-        Vælg sprog:
-        <select class="sprog" name="sprog">
-            <!-- <option value="">Sprog</option> -->
-            <option value="Dansk">DA</option>
-            <option value="Tysk">DE</option>
-        </select>
-    </label>
+
 
 </body>
 
