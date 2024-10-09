@@ -53,29 +53,44 @@ function start() {
   console.log("ready");
 
   // TODO: Add event-listeners to filter and sort buttons
-  //Filter buttons
-  document.querySelector('[data-filter="cat"]').addEventListener("click", () => {
-    const cats = allAnimals.filter((animal) => animal.type === "cat");
-    console.log("Filtered for cats");
-    displayList(cats);
-  });
-  document.querySelector('[data-filter="dog"]').addEventListener("click", () => {
-    const dogs = allAnimals.filter((animal) => animal.type === "dog");
-    console.log("Filtered for dogs");
-    displayList(dogs);
-  });
-  document.querySelector('[data-filter="*"]').addEventListener("click", () => {
-    console.log("Filtering by:", allAnimals);
-    displayList(allAnimals);
-  });
+  registerButtons();
+
+  //loadJSON();
 
   displayList(allAnimals);
-
-  //metoden som i videoen på sortering
-  document.querySelectorAll('[data-action="sort"]').forEach((button) => button.addEventListener("click", selectSort));
-  //loadJSON();
 }
 
+function registerButtons() {
+  //Filtreringsknapper
+  document.querySelectorAll('[data-action="filter"]').forEach((button) => button.addEventListener("click", selectFilter));
+
+  //Sorteringsknapper
+  document.querySelectorAll('[data-action="sort"]').forEach((button) => button.addEventListener("click", selectSort));
+}
+
+function selectFilter(event) {
+  const filter = event.target.dataset.filter;
+  console.log("Filtered for:", filter);
+  filterList(filter);
+}
+
+function filterList(animalType) {
+  let filteredList = allAnimals;
+  if (animalType === "cat") {
+    filteredList = allAnimals.filter(isCat);
+  } else if (animalType === "dog") {
+    filteredList = allAnimals.filter(isDog);
+  }
+  displayList(filteredList);
+}
+
+function isCat(animal) {
+  return animal.type === "cat";
+}
+
+function isDog(animal) {
+  return animal.type === "dog";
+}
 //Select sort button
 function selectSort(event) {
   const sortBy = event.target.dataset.sort;
