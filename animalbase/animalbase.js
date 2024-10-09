@@ -53,29 +53,25 @@ function start() {
   console.log("ready");
 
   // TODO: Add event-listeners to filter and sort buttons
+  //Filter buttons
   document.querySelector('[data-filter="cat"]').addEventListener("click", () => {
     const cats = allAnimals.filter((animal) => animal.type === "cat");
     console.log("Filtered for cats");
     displayList(cats);
   });
-
   document.querySelector('[data-filter="dog"]').addEventListener("click", () => {
     const dogs = allAnimals.filter((animal) => animal.type === "dog");
     console.log("Filtered for dogs");
     displayList(dogs);
   });
   document.querySelector('[data-filter="*"]').addEventListener("click", () => {
-    console.log("Filtered for all animals");
+    console.log("Filtering by:", allAnimals);
     displayList(allAnimals);
   });
 
   displayList(allAnimals);
 
-  //Sortering knapper
-  document.querySelector('[data-sort="name"]').addEventListener("click", sortList);
-  document.querySelector('[data-sort="type"]').addEventListener("click", sortList);
-
-  //metoden som i videoen
+  //metoden som i videoen på sortering
   document.querySelectorAll('[data-action="sort"]').forEach((button) => button.addEventListener("click", selectSort));
   //loadJSON();
 }
@@ -83,7 +79,7 @@ function start() {
 //Select sort button
 function selectSort(event) {
   const sortBy = event.target.dataset.sort;
-  console.log("User selected;", sortBy);
+  console.log("Sorting by:", sortBy);
   sortList(sortBy);
 }
 
@@ -91,50 +87,15 @@ function selectSort(event) {
 function sortList(sortBy) {
   let sortedList = allAnimals;
 
-  if (sortBy === "name") {
-    sortedList = sortedList.sort(sortByName);
-  }
-  if (sortBy === "type") {
-    sortedList = sortedList.sort(sortByType);
-  }
-  if (sortBy === "desc") {
-    sortedList = sortedList.sort(sortByDesc);
-  }
-  if (sortBy === "age") {
-    sortedList = sortedList.sort(sortByAge);
+  sortedList = sortedList.sort(sortByProperty);
+  function sortByProperty(animalA, animalB) {
+    if (animalA[sortBy] < animalB[sortBy]) {
+      return -1;
+    } else {
+      return 1;
+    }
   }
   displayList(sortedList);
-}
-
-//Sort categories
-function sortByName(animalA, animalB) {
-  if (animalA.name < animalB.name) {
-    return -1;
-  } else {
-    return 1;
-  }
-}
-
-function sortByType(animalA, animalB) {
-  if (animalA.type < animalB.type) {
-    return -1;
-  } else {
-    return 1;
-  }
-}
-function sortByDesc(animalA, animalB) {
-  if (animalA.desc < animalB.desc) {
-    return -1;
-  } else {
-    return 1;
-  }
-}
-function sortByAge(animalA, animalB) {
-  if (animalA.age < animalB.age) {
-    return -1;
-  } else {
-    return 1;
-  }
 }
 
 // async function loadJSON() {
