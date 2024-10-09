@@ -79,20 +79,34 @@ function start() {
 //Select sort button
 function selectSort(event) {
   const sortBy = event.target.dataset.sort;
-  console.log("Sorting by:", sortBy);
-  sortList(sortBy);
+  const sortDir = event.target.dataset.sortDirection; //bindestreg i dataattributter i html kan bruges som camelcase i js
+
+  //toggle direction asc/desc
+  if (sortDir === "asc") {
+    event.target.dataset.sortDirection = "desc";
+  } else {
+    event.target.dataset.sortDirection = "asc";
+  }
+  console.log("Sorting by:", sortBy, sortDir);
+  sortList(sortBy, sortDir);
 }
 
 //Sorting system
-function sortList(sortBy) {
+function sortList(sortBy, sortDir) {
   let sortedList = allAnimals;
+  let direction = 1;
+  if (sortDir === "desc") {
+    direction = -1;
+  } else {
+    direction = 1;
+  }
 
   sortedList = sortedList.sort(sortByProperty);
   function sortByProperty(animalA, animalB) {
     if (animalA[sortBy] < animalB[sortBy]) {
-      return -1;
+      return -1 * direction;
     } else {
-      return 1;
+      return 1 * direction;
     }
   }
   displayList(sortedList);
