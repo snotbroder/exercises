@@ -97,6 +97,13 @@ function selectSort(event) {
   const sortBy = event.target.dataset.sort;
   const sortDir = event.target.dataset.sortDirection; //bindestreg i dataattributter i html kan bruges som camelcase i js
 
+  //find old sortBy element and remove class
+  const oldElement = document.querySelector(`[data-sort='${settings.sortBy}']`);
+  oldElement.classList.remove("sortby");
+
+  //add selection indication underline
+  event.target.classList.add("sortby");
+
   //toggle direction asc/desc
   if (sortDir === "asc") {
     event.target.dataset.sortDirection = "desc";
