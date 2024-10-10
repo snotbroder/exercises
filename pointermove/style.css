@@ -1,0 +1,20 @@
+:root {
+  --bg-color: hsl(100, 100%, 0%);
+  --txt-color: hsl(100, 100%, 100%);
+}
+
+body {
+  margin: 0;
+  display: block;
+}
+
+h1 {
+  color: var(--txt-color);
+}
+
+main {
+  display: block;
+  background-color: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+}
